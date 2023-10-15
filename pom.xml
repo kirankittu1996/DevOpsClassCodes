@@ -193,6 +193,29 @@
 			</plugin>
 
         </plugins>
+	    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.2</version>
+            <dependencies>
+                <dependency>
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                    <version><3.8></version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>group-to-exclude</groupId>
+                            <artifactId>artifact-to-exclude</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+        </plugin>
+    </plugins>
+</build>
+
 		<finalName>addressbook</finalName>
     </build>
 	
